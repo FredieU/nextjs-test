@@ -5,6 +5,7 @@
 
 .logo {
   display: flex;
+  cursor: pointer;
 }
 
 button.logInBtn {

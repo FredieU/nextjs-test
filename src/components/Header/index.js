@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
-import { FitnessCenter as AppIcon } from "@material-ui/icons";
+import { FitnessCenter as AppIcon, Person } from "@material-ui/icons";
 import styles from "./Header.module.css";
+import AuthContext from "../../context/AuthContext";
+import { useContext } from "react";
 
 export function Header() {
+  const { user } = useContext(AuthContext);
+
   return (
     <AppBar position="static" color="default">
       <Toolbar className={styles.container}>
@@ -13,11 +17,17 @@ export function Header() {
             <Typography variant="h6">PT App</Typography>
           </div>
         </Link>
-        <Link href="/log-in">
-          <Button className={styles.logInBtn} variant="contained">
-            Log in
-          </Button>
-        </Link>
+        {user ? (
+          <Link href="/account">
+            <Person />
+          </Link>
+        ) : (
+          <Link href="/login">
+            <Button className={styles.logInBtn} variant="contained">
+              Log in
+            </Button>
+          </Link>
+        )}
       </Toolbar>
     </AppBar>
   );
