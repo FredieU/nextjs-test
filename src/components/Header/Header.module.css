@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+}
+
+button.logInBtn {
+  color: white;
+  background: black;
+}
+
+.action {
+}
