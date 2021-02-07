@@ -17,7 +17,11 @@ export default function App({ Component, pageProps }) {
           <title>PT App | {router.pathname}</title>
         </Head>
         <Header />
-        <Container className={styles.root} disableGutters={true}>
+        <Container
+          className={styles.root}
+          disableGutters={true}
+          component="main"
+        >
           <Component {...pageProps} />
         </Container>
         <Footer />
