@@ -50,8 +50,8 @@ export default function Home({ apiUrl, classes }) {
 
       <GridList cellHeight={160} cols={1}>
         {classes.map(({ image, name, uid }) => (
-          <Link href={`/classes/${uid}`}>
-            <GridListTile key={uid} cols={1}>
+          <Link href={`/classes/${uid}`} key={uid}>
+            <GridListTile cols={1}>
               <img
                 className={classesClassNames.image}
                 src={`${apiUrl}${image.url}`}
