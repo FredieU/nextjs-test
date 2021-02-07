@@ -7,8 +7,3 @@
   display: flex;
   cursor: pointer;
 }
-
-button.logInBtn {
-  color: white;
-  background: black;
-}

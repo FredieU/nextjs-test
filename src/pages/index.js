@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import { API_URL } from "../constants";
 import "fontsource-roboto";
+import { API_URL } from "../constants";
 
 export default function Home({ classes }) {
   return (
@@ -13,7 +13,7 @@ export default function Home({ classes }) {
 
       <main>
         {classes.map(({ name, uid }) => (
-          <div>
+          <div key={uid}>
             <Link href={`/classes/${uid}`}>{name}</Link>
           </div>
         ))}
